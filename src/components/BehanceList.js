@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
 import { behanceItem } from '../Data'
 import { AiFillFolderOpen } from 'react-icons/ai'
+import '../gallery.css'
+import { IoIosCloseCircle } from "react-icons/io";
 
 const BehanceList = () => {
 
-    const handleClick = () => {
-        alert('Image clicked!');
-    };
+    const [model, setModel] = useState(false);
+    const [tempimgSrc, setTempImgSrc] = useState('');
+
+    const getImg = (imgSrc) => {
+        setTempImgSrc(imgSrc);
+        setModel(true);
+    }
 
     return (
+        <>
+        <div className={model? "model open" : "model"}>
+            <img src={tempimgSrc} />
+            <IoIosCloseCircle onClick={() => setModel(false)}/>
+        </div>
         <section>
             <div className="container-fluid px-4">
 
@@ -16,7 +27,7 @@ const BehanceList = () => {
                     {
                         behanceItem.map((item) => (
                             <div className="category-item cursor-pointer">
-                                <div className="cat-img relative overflow-hidden rounded-md" onClick={handleClick}>
+                                <div className="cat-img relative overflow-hidden rounded-md" onClick={() => getImg(item.featureImg)}>
                                     <div className="bg-overlay"></div>
                                     <img src={item.featureImg} alt={item.featureImg} />
                                     <div className="save-file flex items-center absolute cursor-pointer top-2 left-2 py-2 px-3 bg-black/50 rounded-full">
@@ -56,6 +67,7 @@ const BehanceList = () => {
 
             </div>
         </section>
+        </>
     )
 }
 
