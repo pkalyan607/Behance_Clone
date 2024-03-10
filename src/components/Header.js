@@ -65,11 +65,11 @@ const Header = () => {
                         </div>
                     </div>
                     
-                    <div className="tools-item flex items-center border rounded-full px-2 py-2 mx-1 justify-between ">
+                    <div className="tools-item flex items-center border rounded-full px-2 py-2 mx-1 justify-between bg-[000000] ">
                             <div className="t-icon">
                                             <MdOutlineSort />
                             </div>
-                            <div className="tname px-2 ">
+                            <div className="tname px-1 ">
                                 <select id="" className='text-md font-bold cursor-pointer'> 
                                             <option selected>Recommended</option>
                                             {
