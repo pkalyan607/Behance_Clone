@@ -1,20 +1,14 @@
 import React from 'react'
 import { adobeLogo } from '../Data'
+
+// Footer component
 const Footer = () => {
     return (
+        // Footer section
         <section className='px-4 py-3 w-full bottom-0 bg-white'>
             <div className="container-fluid ">
                 {/* left side */}
                 <div className="grid lg:grid-cols-2 gap-3 items-center ">
-                <div className="left-foot">
-                    <ul className='flex items-center'>
-                        <li className='mx-3 font-medium text-sm'><a href="http://" target="_blank" rel="noopener noreferrer">Link one</a></li>
-                        <li className='mx-3 font-medium text-sm'><a href="http://" target="_blank" rel="noopener noreferrer">Link one</a></li>
-                        <li className='mx-3 font-medium text-sm'><a href="http://" target="_blank" rel="noopener noreferrer">Link one</a></li>
-                        <li className='mx-3 font-medium text-sm'><a href="http://" target="_blank" rel="noopener noreferrer">Link one</a></li>
-                        <li className='mx-3 font-medium text-sm'><a href="http://" target="_blank" rel="noopener noreferrer">Link one</a></li>
-                    </ul>
-                </div>
 
                 <div className="adobe-right flex lg:justify-end">
                     <div className="adobe-btn mx-4 flex items-center hover:opacity-70">
