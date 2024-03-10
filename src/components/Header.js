@@ -8,19 +8,22 @@ import { adobeLogo } from '../Data';
 import { searchType } from '../Data';
 import { tagName } from '../Data';
 
-
+// Function to open mobile menu
 const openMenu = () => {
   const main_header = document.getElementById('header');
   main_header.classList.toggle('menuopen');
 }
+
+// Function to close mobile menu
 const closeMenu = () => {
  openMenu();
 }
 
-
+// Header component
 const Header = () => {
+        // State variables
     const [dropdownData, setDropDownData] = useState([
-        "curated", "Most Appreciated", "Most Viewed", "Most Discussed", "Most Recent"
+        "Curated", "Most Appreciated", "Most Viewed", "Most Discussed", "Most Recent"
     ]);
 
     const [data, setData] = useState([
@@ -29,6 +32,7 @@ const Header = () => {
 
     const [filteredData, setFilteredData] = useState([]);     
 
+    // Function to handle search input
     const search = (event) => {
         let s = event.target.value.toLowerCase();
         if (s !== "") {
@@ -41,22 +45,26 @@ const Header = () => {
         }
     };
     
+    // Rendering component
     return (
         <>
             <header className='header' id='header'>
+                {/* Mobile menu */}
                 <div id='menu' className='menu duration-300 bg-white lg:hidden shadow-lg w-[70%] h-[100%] fixed left-0 top-0 p-5'>
                     <div className='text-3xl absolute right-3 cursor-pointer text-[#333]' onClick={() => closeMenu()} >
                         <IoClose />
                     </div>
+                    {/* Menu items */}
                     <ul className=''>
-                        <li className='m-3 font-medium text-md'><a href="http://" target="_blank" rel="noopener noreferrer">For you</a></li>
-                        <li className='m-3 font-medium text-md'><a href="http://" target="_blank" rel="noopener noreferrer">Discover</a></li>
-                        <li className='m-3 font-medium text-md'><a href="http://" target="_blank" rel="noopener noreferrer">Hire</a></li>
-                        <li className='m-3 font-medium text-md'><a href="http://" target="_blank" rel="noopener noreferrer">Assest</a></li>
-                        <li className='m-3 font-medium text-md'><a href="http://" target="_blank" rel="noopener noreferrer">Jobs</a></li>
+                        <li className='m-3 font-medium text-md'><a href="" rel="noopener noreferrer">For you</a></li>
+                        <li className='m-3 font-medium text-md'><a href="" rel="noopener noreferrer">Discover</a></li>
+                        <li className='m-3 font-medium text-md'><a href="" rel="noopener noreferrer">Hire</a></li>
+                        <li className='m-3 font-medium text-md'><a href="" rel="noopener noreferrer">Assest</a></li>
+                        <li className='m-3 font-medium text-md'><a href="" rel="noopener noreferrer">Jobs</a></li>
                     </ul>
                 </div>
 
+                {/* Desktop header */}
                 <div className='border-b w-full top-0 bg-white'>
                     <div className="container-fluid">
                         <div className="top-header py-4 lgpy-3 px-5 border-b border ">
@@ -66,13 +74,15 @@ const Header = () => {
                                         <CgMenuLeft />
                                     </div>
                                     <img src={behance_logo} alt={behance_logo} className="w-auto h-4" />
+
+                                    {/* Page links */}
                                     <div className="page-links  lg:ml-8 hidden lg:block">
                                         <ul className='flex items-center'>
-                                            <li className='mx-3 font-medium text-md active'><a href="http://" target="_blank" rel="noopener noreferrer">For you</a></li>
-                                            <li className='mx-3 font-medium text-md active'><a href="http://" target="_blank" rel="noopener noreferrer">Discover</a></li>
-                                            <li className='mx-3 font-medium text-md active'><a href="http://" target="_blank" rel="noopener noreferrer">Hire</a></li>
-                                            <li className='mx-3 font-medium text-md active'><a href="http://" target="_blank" rel="noopener noreferrer">Assest</a></li>
-                                            <li className='mx-3 font-medium text-md active'><a href="http://" target="_blank" rel="noopener noreferrer">Jobs</a></li>
+                                            <li className='mx-3 font-medium text-md active'><a href="" rel="noopener noreferrer">For you</a></li>
+                                            <li className='mx-3 font-medium text-md active'><a href="" rel="noopener noreferrer">Discover</a></li>
+                                            <li className='mx-3 font-medium text-md active'><a href="" rel="noopener noreferrer">Hire</a></li>
+                                            <li className='mx-3 font-medium text-md active'><a href="" rel="noopener noreferrer">Assest</a></li>
+                                            <li className='mx-3 font-medium text-md active'><a href="" rel="noopener noreferrer">Jobs</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -97,6 +107,8 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Behance tools */}
                         <div className="hidden lg:block">
                             <div className="behance-toools flex items-center justify-evenly p-5 pb-3">
                                 <div className='flex items-center'>
@@ -113,12 +125,12 @@ const Header = () => {
                                             </div>
                                         </div>
                                     ))}
-                                    <div className="tools-item flex items-center border rounded-md px-2 py-2 mx-1 justify-between">
+                                    <div className="tools-item flex items-center border rounded-md px-2 py-2 mx-1 justify-between ">
                                         <div className="t-icon">
                                             <MdOutlineSort />
                                         </div>
-                                        <div className="tname px-2">
-                                        <select id="" className='text-sm font-bold'> 
+                                        <div className="tname px-2 ">
+                                        <select id="" className='text-sm font-bold cursor-pointer'> 
                                             <option selected>Recommended</option>
                                             {
                                                 dropdownData.map((result) => (
@@ -131,6 +143,8 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Search area */}
                         <div className="search-area p-5 pt-2">
                             <div className="search-area relative items-center">
                                 <div className="search-box w-full  border-2 rounded-full bg-[#f9f9f9] overflow-hidden flex items-center justify-between">
