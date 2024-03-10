@@ -70,7 +70,7 @@ const Header = () => {
                                             <MdOutlineSort />
                             </div>
                             <div className="tname px-1 ">
-                                <select id="" className='text-md font-bold cursor-pointer' style={{ backgroundColor: "white !important" }}> 
+                                <select id="" className='text-md font-bold cursor-pointer' style={{ background: "white" }}> 
                                             <option selected>Recommended</option>
                                             {
                                                 dropdownData.map((result) => (
