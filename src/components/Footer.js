@@ -14,9 +14,11 @@ const Footer = () => {
                     <div className="adobe-btn mx-4 flex items-center hover:opacity-70">
                         <img src={adobeLogo} alt={adobeLogo} className="w-5 h-5" />
                         <a href="" className='pl-1 font-bold text-black text-sm'> Adobe</a>
+                        
                     </div>
                 </div>
                 </div>
+                <p className='text-sm'> 2024 Adobe Inc. All rights reserved.</p>
             </div>
         </section>
     )
